@@ -35,10 +35,6 @@ describe Words do
          end
 
          
-         it "must return Five Hundred Forty Three Thousand and Forty Seven" do
-            # @words.convertIntToWords(543047).must_equal 'Twelves'
-            #assert_equal "Five Hundred Forty Three Thousand and Forty Seven", @words.convertIntToWords(543047)
-         end
     end
 
 

@@ -71,22 +71,27 @@ class Words
             end
             #numbers less than a billion
         elsif number >= 1000 && number < 1000000
-              number % 1000 == 0 ? 
+              
+            number % 1000 == 0 ? 
               outputWords = convertIntToWords( number/1000) + ' Thousand ' : 
             
-            # # number % ((number /1000)*1000) < 1000  ?
+            # # # # number % ((number /1000)*1000) < 1000  ?
               (number % ((number /1000)*1000)) % 100 == 0 ? 
               outputWords = convertIntToWords( number/1000) + ' Thousand and ' + convertIntToWords(number % ((number /1000)*1000)) :
               outputWords = convertIntToWords( number/1000) + ' Thousand ' + convertIntToWords(number % ((number /1000)*1000))
-            # #numbers less than a 
+        # elsif number >= 100000 && number < 1000000
+        #    number % ((number /10000)*10000) % 1000 == 0 ? 
+        #    outputWords = convertIntToWords( number/1000) + ' Thousand' : 
+        #    outputWords = convertIntToWords( number/1000) + ' Thousand ' + convertIntToWords(number % ((number /1000)*1000))
+
         elsif number >= 1000000 && number <1000000000
             number % 1000000 == 0 ? 
             outputWords = rep[number/1000000] + ' Million ' :
             outputWords = rep[number / 1000000] + ' Million ' + convertIntToWords(number % ((number /1000000)*1000000))
         end
-        # ((number /1000)*1000)
-        # outputWords
+        
+         outputWords
     end 
 end
 @words = Words.new
-puts @words.convertIntToWords(543047)
+puts @words.convertIntToWords(543111)
